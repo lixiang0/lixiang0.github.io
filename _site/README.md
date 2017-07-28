@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## my blog
 
 
@@ -40,6 +39,3 @@ if occurs error:
 /usr/lib/ruby/vendor_ruby/bundler/dsl.rb:227:in `block in _normalize_options': `x64_mingw` is not a valid platform
 ```
 delete 'x64_mingw' in Gemfile.
-=======
-# blog
->>>>>>> d28e78392bae03b4db5d8dbbd1a14a225ec70453
