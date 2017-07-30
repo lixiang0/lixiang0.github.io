@@ -2,5 +2,5 @@
 build/
 *.lock
 .sass-cache
-_posts/
+_site/
 
