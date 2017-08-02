@@ -282,7 +282,8 @@ print("eval loss: %r"% eval_loss)
 ```
 最终的结果：
 ```
-    {'global_step': 1000, 'loss': 1.9650059e-11}
+ train loss: {'loss': 2.9967691e-07, 'global_step': 1000}
+eval loss: {'loss': 0.0025745858, 'global_step': 1000}
 ```
 #### 自定义模型
 
