@@ -16,7 +16,7 @@
 title: 我的博客
 email: lingyunzi09@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  自然语言  量化交易 宏观经济.
+  自然语言  机器学习 量化交易.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: xiao_ruben
