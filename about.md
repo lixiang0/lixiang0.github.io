@@ -1,7 +1,7 @@
 ---
 title: About
 layout: post
-permalink: "resume.html"
+permalink: "about.html"
 ---
 
 
