@@ -1,19 +1,7 @@
 ---
 title: About
-layout: page
-permalink: "/about/"
+layout: post
+permalink: "resume.html"
 ---
 
-# 教育经历：
 
-- 08-12 赣南师范大学  电子科学与技术
-- 12-15 北京工业大学  嵌入式系统与软件
-
-# 技术能力：
-
-- 编程语言c#、java、python
-
-- 在车辆监控系统、机器人领域从事开发，现在专注自然语言处理和机器学习。
-
-# 兴趣方向
-- 自然语言处理 数据分析 量化交易
