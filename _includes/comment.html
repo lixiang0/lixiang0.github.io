@@ -1,1 +1,30 @@
-评论
+<head>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+</head>
+<body>
+        <main style="height:inherit !important;">
+            <section class="content" style="overflow:auto;">
+                <article class="markdown-section" id="main">
+                    <h1 id="quick-start"><span>留言:</span></h1>
+                    <div class="comment"></div>
+                </article>
+            </section>
+        </main>
+
+    <script>
+        var valine = new Valine();
+        valine.init({
+            // notify: true,
+            // verify: true,
+            el: '.comment',
+            appId: 'wmFnpG7wxdHPrkhlw0qdTfkS-gzGzoHsz',
+            appKey: 'Ps2RiyXUQbP1pRArS16gpU',
+            placeholder: '有问题请留言',
+            path:'/',
+            avatar:'mm' // 1.1.7 新增(mm/identicon/monsterid/wavatar/retro)
+        })
+
+    </script>
+
+</body>
