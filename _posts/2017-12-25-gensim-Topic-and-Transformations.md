@@ -1,7 +1,8 @@
 ---
-title: "[Gensim]3.Topic and Transformations"
+title: "3.Topic and Transformations"
 category: Gensim
 layout: post
+tags: [gensim]
 date: '2017-12-25 20:56:24'
 ---
 ```

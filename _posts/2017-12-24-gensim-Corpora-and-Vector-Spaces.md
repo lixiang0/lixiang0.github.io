@@ -1,7 +1,8 @@
 ---
-title: "[Gensim]2.Corpora and Vector Spaces"
+title: "2.Corpora and Vector Spaces"
 category: Gensim
 layout: post
+tags: [Gensim]
 date: '2017-12-24 19:16:24'
 ---
 ```

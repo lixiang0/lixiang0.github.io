@@ -1,7 +1,8 @@
 ---
-title: "[Gensim]4.Similarity and Queries"
+title: "4.Similarity and Queries"
 category: Gensim
 layout: post
+tags: [Gensim]
 date: '2017-12-25 21:27:24'
 ---
 

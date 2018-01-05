@@ -1,7 +1,8 @@
 ---
-title: "[Pytorch]2.Detect Language"
+title: "2.Detect Language"
 category: Pytorch
 layout: post
+tags: [Pytorch]
 date: '2017-12-29 18:10:24'
 ---
 

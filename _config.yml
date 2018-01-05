@@ -16,7 +16,7 @@ all_categories: [
 ["Deep Learning", "深度学习","/posts/dl.html"],
 ["Machine Learning", "机器学习","/posts/ml.html"], 
 ["other", "杂记","/posts/other.html"],
-["translation", "翻译","/posts/tanslation.html"],
+["translation", "翻译","/posts/translation.html"],
 ["about", "关于","/about.html"]
 ]
 

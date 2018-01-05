@@ -1,7 +1,8 @@
 ---
-title: "[Gensim]5.Word2Vec"
+title: "5.Word2Vec"
 category: Gensim
 layout: post
+tags: [gensim]
 date: '2017-12-26 20:56:24'
 ---
 ```

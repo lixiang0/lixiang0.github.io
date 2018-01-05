@@ -1,7 +1,8 @@
 ---
-title: "[Pytorch]1.Training on GPU"
+title: "1.Training on GPU"
 category: Pytorch
 layout: post
+tags: [Pytorch]
 date: '2017-12-29 18:00:24'
 ---
 
