@@ -2,7 +2,7 @@
 title: "3.Topic and Transformations"
 category: nlp
 layout: post
-tags: [nlp]
+tags: [Gensim,nlp]
 date: '2017-12-25 20:56:24'
 ---
 ```

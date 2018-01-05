@@ -2,7 +2,7 @@
 title: "4.Similarity and Queries"
 category: nlp
 layout: post
-tags: [nlp]
+tags: [Gensim,nlp]
 date: '2017-12-25 21:27:24'
 ---
 

@@ -2,7 +2,7 @@
 title: "5.Word2Vec"
 category: nlp
 layout: post
-tags: [nlp]
+tags: [Gensim,nlp]
 date: '2017-12-26 20:56:24'
 ---
 ```
