@@ -1,6 +1,6 @@
 ---
 title: "[Pytorch]1.Training on GPU"
-catagories: Pytorch
+category: Pytorch
 layout: post
 date: '2017-12-29 18:00:24'
 ---

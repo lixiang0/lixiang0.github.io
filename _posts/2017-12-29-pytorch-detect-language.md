@@ -1,6 +1,6 @@
 ---
 title: "[Pytorch]2.Detect Language"
-catagories: Pytorch
+category: Pytorch
 layout: post
 date: '2017-12-29 18:10:24'
 ---

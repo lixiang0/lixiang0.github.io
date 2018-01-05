@@ -1,6 +1,6 @@
 ---
 title: "[Gensim]3.Topic and Transformations"
-catagories: Gensim
+category: Gensim
 layout: post
 date: '2017-12-25 20:56:24'
 ---

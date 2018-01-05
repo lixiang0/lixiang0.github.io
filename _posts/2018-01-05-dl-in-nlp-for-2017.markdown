@@ -1,0 +1,180 @@
+---
+layout: post
+category: translation
+title:  "2017年深度学习在NLP领域的进展和趋势"
+tags: [翻译,DL,NLP]
+
+layout: post
+
+date: '2018-01-05 21:00:24'
+---
+本文翻译的是[这篇文章](https://tryolabs.com/blog/2017/12/12/deep-learning-for-nlp-advancements-and-trends-in-2017/)
+
+---
+
+在过去的很多年里，深度学习架构和算法在某些领域，比如图像识别和语音处理，取得了令人印象深刻的进展。
+
+最初，深度学习架构和算法在NLP领域并没能取得大的进展，但是最近深度学习在普通NLP任务上的取得的结果显示深度学习也能取得显著的效果。命名实体识别、词性标注和情感分析就即是神经网络模型优于传统方法的地方。而机器翻译是所有进展中是最值得纪念的。
+## 从自己训练word2vec到使用预训练模型
+词嵌入是深度学习在NLP中最著名的技术了。词嵌入基于分布假设(Harris (1954))，认为相同意义的词分布在相似的上下文中。关于词嵌入的详细介绍可以参考[这篇文章](https://monkeylearn.com/blog/word-embeddings-transform-text-numbers/)。
+
+<img src="https://tryolabs.com/images/blog/post-images/2017-12-12-deep-learning-for-nlp-advancements-2017/distributional-hypothesis-word-vectors.png" alt="Smiley face" height="250">
+
+word2vec (Mikolov et al., 2013)和GloVe (Pennington et al., 2014)算法是词嵌入算法的先驱，但是并不被认为是深度学习算法。word2vec是浅层神经网路，GloVe是基于统计的方法。实践证明使用词嵌入在实践中很有效。
+最开始的时候，解决NLP问题需要使用词嵌入的时候倾向与自己训练一个领域相关模型。渐渐的，一些基于Wikipedia, Twitter, Google News, web crawls预训练的模型开始得到广泛应用。使用预训练的词嵌入模型可以很方便的集成到自己的深度学习算法中。
+今年表明预训练的词嵌入模型依然是NLP中的一个关键难题。Facebook AI实验室的[fastText](https://fasttext.cc/)发布了294中语言的预训练向量。fastText能够避免OOV问题，并在小数据集上优于word2vec和GloVe。
+[spaCy](https://spacy.io/)框架集成了词嵌入和深度学习模型，完成诸如NER和依存分析任务，并且允许用户更新模型或者使用自己的模型。
+未来，预训练的模型将在生物、文学、经济等特定领域取得好的效果，但是也存在不能很好的调优问题。同时，一些适应性的词嵌入方法出现了。
+
+## 通用embedding应用于指定领域
+
+导致预训练词嵌入的应用下降的主要问题是预训练语料和最终使用的语料之间的词分布差别。如果没有足够多的语料训练自己i的词嵌入模型，那么使用预训练的词嵌入模型是有好处的。那么如何将通用词嵌入模型应用到指定领域呢？
+
+NLP中这一类问题通常叫做交叉领域或者领域适应技术，跟迁移学习类似。[Yang et al](http://aclweb.org/anthology/D17-1312)今年做过相关有意思的工作，论文通过给定的源领域embedding使用正则化的skip-gram模型用来学习目标领域的embedding。
+
+论文的方法简单但是有效。想象一下，我们知道源领域中单词w的词嵌入向量为$w_s$。为了计算目标领域$w_t$，作者将$w_s$经过一系列转换。基本的，如果单词在两个领域中频繁出现，那么它的含义将不是领域独立。这种情况下，转换的量比较大，所以结果向量在两个领域中趋向于一致。但是如果单词在一个领域中出现的频率比另一个领域高，那么转换的量将小。
+
+这个研究主题没有得到广泛的研究，但是我相信在不久的将来将会得到更多的关注。
+
+
+## 情感分析取得的难以置信的效果
+
+历史上很多的发现都是不经意的，比如青霉素、比如X光。今年，[Radford et al.](https://arxiv.org/abs/1704.01444)在探索字节等级的循环语言模型性能，该模型的目标是预测Amazon中文本中的下一个字符，他们发现已训练模型中的单个神经元能够高效的预测情绪值。是的，没有听错，单个情感神经元能够准确的区分负面和正面的情感。
+
+<img src="https://tryolabs.com/images/blog/post-images/2017-12-12-deep-learning-for-nlp-advancements-2017/polarity-vs-sentiment-neuron.png" alt="Smiley face" height="400">
+
+在知道这个行为之后，作者决定在[Stanford Sentiment Treebank](https://nlp.stanford.edu/sentiment/treebank.html)模型上测试模型，得到了91.8%的精度，而先前最好的结果是90.2%。这意味着该模型能够使用非监督的方法使用更少的样例数据就可以实现先进的情感分析。
+
+## 情感神经元表现
+
+既然该模型是基于字符等级，神经元的状态随着文本中的字符改变并能看到神经元在情感检测中的行为表现。
+<video id="video" controls="" preload="none" poster="http://media.w3.org/2010/05/sintel/poster.png">
+      <source id="mp4" src="https://tryolabs.com/images/blog/post-images/2017-12-12-deep-learning-for-nlp-advancements-2017/sentiment-neuron-behavior.mp4" type="video/mp4">
+      <p>Your user agent does not support the HTML5 Video element.</p>
+   </video>
+可以看到在遇到单词best之后，神经元的情感状态变得非常积极，而遇到单词horrendous变得消极。
+
+## 生成情感倾向文本
+
+该模型是生成式模型，所以能够同样的用于生成Amazon评论文本。可以通过简单的覆盖情感神经元的值即可生成有倾向性的文本。
+
+|积极情感|消极情感|
+|--|--|
+|Best hammock ever! Stays in place and holds its shape. Comfy (I love the deep neon pictures on it), and looks so cute.|They didn’t fit either. Straight high sticks at the end. On par with other buds I have. Lesson learned to avoid.|
+|Just what I was looking for. Nice fitted pants, exactly matched seam to color contrast with other pants I own. Highly recommended and also very happy!|The package received was blank and has no barcode. A waste of time and money.|
+
+查看实例可以打开链接：[生成文本实例](https://blog.openai.com/unsupervised-sentiment-neuron/)
+
+本方法使用的是[multiplicative LSTM](https://arxiv.org/abs/1609.07959)模型，主要的原因就是它比普通的LSTM模型更容易收敛。在Amazon评价语料库上训练使用了4096个单元。
+
+为什么情感倾向判断的准确度高依然未知。读者可以尝试着训练一个自己的模型并做一些实验，作者的训练花了大概一个月时间。
+
+## 推特與情分析
+推特上的與情分析是一个很有力的工具，人们对某个商业品牌的评价，分析营销活动的影响，竞选活动中希拉里和川普在大众中的评价。
+
+<img src="https://tryolabs.com/images/blog/post-images/2017-12-12-deep-learning-for-nlp-advancements-2017/trump-vs-clinton-sentiment-analysis.png" alt="Smiley face" height="250">
+
+### SemEval 2017
+推特與情分析不仅受到了NLP领域的广大研究者的关注，也受到政治家和社会活动家的关注。因此从2013年开始，SemEval提出了对应的任务-情感分析。
+今年，有48支队伍参与这项任务。今年的5个任务为：
+1.子任务A：给定一条推文，判断积极、消极、平和三种情感。
+2.子任务B：给定一条推文和一个主题，将主题判断为积极或者消极。
+3.子任务C：给定一条推文和一个主题，将推文分为：强烈的积极、轻微的积极、平和、轻微的消极、强烈的消极。
+4.子任务D：给定关于某个主题的推文，评估这些推文在消极和积极的分布。
+5.子任务E：给定关于某个主题的推文，评估这些推文在强烈的积极、轻微的积极、平和、轻微的消极、强烈的消极中的分布。
+
+参赛队伍中有20个队伍使用了CNN或LSTM模型。尽管如此，SVM模型依然流行，有一些队伍结合了神经网络方法或使用了词嵌入特征。
+
+### The BB_twtr system
+
+该组工作发布在(Cliche, 2017)，英语组中5个子任务排列第一。作者结合了10个CNN和10个biLSTM用来训练不同的超参和不同的预训练策略。在他们的论文中详细的叙述了网络的结构。
+为了训练模型，作者使用了人工标注的推文（子任务A标注了49693条）以及没有标注的1亿推文（只是简单的标记了积极和消极）。这些推文都经过了小写、符号化、特殊符号替换链接和表情、统一重复的字母（比如niiice,niiiiiice统一为niice）。
+作者使用了word2vec, GloVe and fastText等方法训练词向量，结果表明并没有哪个方法能够取得更明显的效果，因而作者采用了一种投票的策略。
+
+### 令人激动的抽象摘要系统
+自动摘要和自动翻译是NLP中首要的任务，目前主要有2中方法：基于抽取的方法，从原文中抽取最重要的片段；基于抽象的方法，通过生成摘要。之前基于抽取的方法处于主流地位，由于更为简单的缘故。
+去年，基于RNN模型在文本生成中取得了不可思议的效果，尤其是在断文本的输入和输出，但是在长文本中却取得很差的结果。[Paulus et al](https://arxiv.org/abs/1705.04304)提出了一种神经网络模型克服了这个局限性。如下图所示，结果是令人振奋的。
+![](https://tryolabs.com/images/blog/post-images/2017-12-12-deep-learning-for-nlp-advancements-2017/automatic-summarization.mp4)
+作者使用biLSTM对输入进行编码，然后使用LSTM解码生成输出。他们的主要贡献是提出了内部注意力机制，分别的注意到了输出和生成的输出的连续性，以及新的训练方法：结合了标准监督单词预测和强化学习
+
+### 内部注意力机制
+
+内部注意力机制的提出是为了避免输出的重复。为了达到这个目标他们在解码的时候生成输出单词之前使用了暂时的注意力查看输入文本的前面部分。这使得模型在生成步骤使用输入的不同部分。模型也能在解码的时候使用之前的隐藏层状态。这两种方法结合使得在生成摘要输出时选择最合适的单词。
+
+### 强化学习
+
+不同的人会用不同的单词和句子顺序来生成摘要，但两种摘要都可以认为是合理的。因此，一个好的摘要不用严格的按照训练数据集中的摘要。明白了这个，作者避免使用标准的学习型算法，该算法尽量在每一个解码步骤减小与目标摘要的loss，而是使用强化学习策略，这是一种明智的选择。
+
+### end-to-end模型的良好结果
+
+模型在[CNN/Daily Mail dataset](https://github.com/abisee/cnn-dailymail)上测试，并获取到了很好质量和可读性。模型进行了预处理：输入文本标签化，全部小写，数字用0代替，一些特殊的实体被移除。
+
+### 第一次实现完全非监督机器翻译
+
+双语词汇对应，就是将原语言语料库和目标语言语料库中词对应起来组成对，是之前NLP的任务。自动对应双语词汇也能促进别的任务比如信息检索和统计机器翻译。然而这些方法大部分时间都依赖不同种类的资源，一般来说需要的初始化的双语对齐语料库就都不容易建立。
+随着词嵌入取得很大的成功，交叉语料的词嵌入出现了，不同于词汇，对齐的是词嵌入空间。[Conneau et al. (2018)](https://arxiv.org/abs/1710.04087)的方法不依赖具体的资源，但能取得比有监督的方法更好的效果。
+作者的方法是使用单语语料库进行训练各自的词嵌入模型，然后学习两种向量空间之间的映射，就像这种转换使得它们在公共空间内相互靠近。他们使用fastText基于Wikipedia训练非监督的词向量。下面的图片说明了训练的过程：
+
+<img src="https://tryolabs.com/images/blog/post-images/2017-12-12-deep-learning-for-nlp-advancements-2017/word-embedding-mappings.png" alt="Smiley face" height="250">
+
+X代表的是英语，Y代表的是意大利语。
+首先他们使用对抗学习的方法学习到转换矩阵W用来执行第一次语料对齐。他们训练了一个生成式对抗网络（GAN），[Goodfellow et al. (2014)](https://arxiv.org/abs/1406.2661),如果不熟悉GAN，可以参考[这篇博文](https://tryolabs.com/blog/2016/12/06/major-advancements-deep-learning-2016/)。
+
+
+<img src="https://tryolabs.com/images/blog/post-images/2017-12-12-deep-learning-for-nlp-advancements-2017/english-italian-translation-precision.png" alt="Smiley face" height="400">
+
+### 一些优秀的框架和工具包
+
+#### AllenNLP
+[AllenNLP](http://allennlp.org/papers/AllenNLP_white_paper.pdf)用Pytorch实现的，用于完成机器阅读理解，文本蕴涵，语义角色标注，指代消解，命名实体识别等任务。
+#### ParlAI
+[ParlAI](https://arxiv.org/abs/1705.06476)是一个用于研究对话的开源软件平台，使用python实现，用于训练和测试对话模型，提供多种数据集和模型，比如记忆模型，seq2seq和LSTMs
+#### OpenNMT
+[OpenNMT](https://arxiv.org/abs/1701.02810)实现了seq2seq模型，用于完成机器翻译，摘要，图像文字生成和语音识别。
+### 总结
+NLP中采用深度学习的方法越来越多，下面显示的是各会议中NLP采用深度学习方法的论文占比（会议包括ACL, EMNLP, EACL and NAACL）。
+![](https://tryolabs.com/images/blog/post-images/2017-12-12-deep-learning-for-nlp-advancements-2017/percentage-deep-learning-papers.png)
+然而，端到端学习仅仅开始。现在依然还在处理经典的NLP任务并为之整理数据，比如清洗，标签化，一些实体的统一（链接，数字，邮箱地址等）。我们使用通用的词嵌入模型，副作用就是没有抓住特定领域短语的重要性，并且通用词嵌入模型在多语言表示表现效果不尽如人意。
+
+## 更多资料
+更多的关于深度学习在NLP领域的研究参考[Recent Trends in Deep Learning Based Natural Language Processing ](https://arxiv.org/abs/1708.02709)by Young et al. (2017)。
+
+[ From Characters to Understanding Natural Language (C2NLU): Robust End-to-End Deep Learning for NLP ](http://drops.dagstuhl.de/opus/volltexte/2017/7248/pdf/dagrep_v007_i001_p129_s17042.pdf)by Blunsom et al. (2017)讨论的是使用字母作为深度学习模型的输入，而不是采用语言相关的符号，的好处和挑战。
+
+模型之间的比较参考[comparative study of CNN and RNN for NLP, by Yin et al. (2017)](https://arxiv.org/abs/1702.01923)
+
+[GAN](https://tryolabs.com/blog/2016/12/06/major-advancements-deep-learning-2016/)的介绍可以参考这篇。
+
+关于词嵌入的介绍可以参考[这篇文章](https://monkeylearn.com/blog/word-embeddings-transform-text-numbers/)。
+
+关于词嵌入2017年的发展参考[About Word embeddings in 2017: Trends and future directions](http://ruder.io/word-embeddings-2017/)
+
+## 参考文献
+
+[From Characters to Understanding Natural Language (C2NLU): Robust End-to-End Deep Learning for NLP Phil Blunsom, Kyunghyun Cho, Chris Dyer and Hinrich Schütze (2017)](http://drops.dagstuhl.de/opus/volltexte/2017/7248/pdf/dagrep_v007_i001_p129_s17042.pdf)
+
+[BB_twtr at SemEval-2017 Task 4: Twitter Sentiment Analysis with CNNs and LSTMs Mathieu Cliche (2017)](https://arxiv.org/abs/1704.06125)
+
+[Word Translation without Parallel Data Alexis Conneau, Guillaume Lample, Marc’Aurelio Ranzato, Ludovic Denoyer, Hervé Jégou (2018)](https://arxiv.org/abs/1710.04087)
+
+[Generative adversarial nets Ian Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville and Yoshua Bengio (2014)](https://arxiv.org/abs/1406.2661)
+
+[Distributional structure Zellig Harris (1954)](https://doi.org/10.1080/00437956.1954.11659520)
+
+[OpenNMT: Open-source toolkit for neural machine translation Guillaume Klein, Yoon Kim, Yuntian Deng, Jean Senellart and Alexander M Rush. (2017)](https://arxiv.org/abs/1701.02810)
+
+[Multiplicative lstm for sequence modelling Ben Krause, Liang Lu, Iain Murray and Steve Renals (2016)](https://arxiv.org/abs/1609.07959)
+
+[Parlai: A dialog research software platform Alexander H Miller, Will Feng, Adam Fisch, Jiasen Lu, Dhruv Batra, Antoine Bordes, Devi Parikh and Jason Weston (2017)](http://www.aclweb.org/anthology/D17-2014)
+
+[Linguistic Regularities in Continuous Space Word Representations Tomas Mikolov, Scott Wen-tau Yih and Geoffrey Zweig (2013)](https://www.aclweb.org/anthology/N13-1090)
+
+[Glove: Global vectors for word representation Jeffrey Pennington, Richard Socher and Christopher D. Manning (2014)](https://www.aclweb.org/anthology/D14-1162)
+
+[Learning to Generate Reviews and Discovering Sentiment Alec Radford, Rafal Jozefowicz and Ilya Sutskever (2017)](https://arxiv.org/abs/1704.01444)
+
+[A Simple Regularization-based Algorithm for Learning Cross-Domain Word Embeddings Wei Yang, Wei Lu, Vincent Zheng (2017)](http://aclweb.org/anthology/D17-1312)
+
+[Comparative study of CNN and RNN for Natural Language Processing Wenpeng Yin, Katharina Kann, Mo Yu and Hinrich Schütze (2017)](https://arxiv.org/abs/1702.01923)
+
+[Recent Trends in Deep Learning Based Natural Language Processing Tom Younga, Devamanyu Hazarikab, Soujanya Poriac and Erik Cambriad (2017)](https://arxiv.org/abs/1708.02709)

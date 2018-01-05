@@ -1,6 +1,6 @@
 ---
 title: "[Gensim]5.Word2Vec"
-catagories: Gensim
+category: Gensim
 layout: post
 date: '2017-12-26 20:56:24'
 ---

@@ -1,6 +1,6 @@
 ---
 title: "[Gensim]1.Introduction"
-catagories: Gensim
+category: Gensim
 layout: post
 date: '2017-12-24 18:16:24'
 ---

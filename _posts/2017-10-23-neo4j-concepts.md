@@ -1,6 +1,6 @@
 ---
 title: "[neo4j]2.Neo4j相关概念"
-catagories: neo4j
+category: neo4j
 layout: post
 date: '2017-10-17 21:30:24'
 ---

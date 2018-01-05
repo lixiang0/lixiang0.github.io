@@ -1,6 +1,6 @@
 ---
 title: "[Gensim]4.Similarity and Queries"
-catagories: Gensim
+category: Gensim
 layout: post
 date: '2017-12-25 21:27:24'
 ---

@@ -1,6 +1,6 @@
 ---
 title: "[Gensim]2.Corpora and Vector Spaces"
-catagories: Gensim
+category: Gensim
 layout: post
 date: '2017-12-24 19:16:24'
 ---

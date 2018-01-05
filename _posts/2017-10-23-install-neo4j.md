@@ -1,6 +1,6 @@
 ---
 title: "[neo4j]1.Install Neo4j"
-catagories: neo4j
+category: neo4j
 layout: post
 date: '2017-10-17 21:00:24'
 ---
