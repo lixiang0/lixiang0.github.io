@@ -6,7 +6,7 @@ tags: [翻译,DL,NLP]
 
 layout: post
 
-date: '2018-01-05 21:00:24'
+date: '2017-01-05 21:00:24'
 ---
 本文翻译的是[这篇文章](https://tryolabs.com/blog/2017/12/12/deep-learning-for-nlp-advancements-and-trends-in-2017/)
 
@@ -18,7 +18,7 @@ date: '2018-01-05 21:00:24'
 ## 从自己训练word2vec到使用预训练模型
 词嵌入是深度学习在NLP中最著名的技术了。词嵌入基于分布假设(Harris (1954))，认为相同意义的词分布在相似的上下文中。关于词嵌入的详细介绍可以参考[这篇文章](https://monkeylearn.com/blog/word-embeddings-transform-text-numbers/)。
 
-<img src="https://tryolabs.com/images/blog/post-images/2017-12-12-deep-learning-for-nlp-advancements-2017/distributional-hypothesis-word-vectors.png" alt="Smiley face" height="250">
+<img src="https://tryolabs.com/images/blog/post-images/2017-12-12-deep-learning-for-nlp-advancements-2017/distributional-hypothesis-word-vectors.png" alt="Smiley face" height="150">
 
 word2vec (Mikolov et al., 2013)和GloVe (Pennington et al., 2014)算法是词嵌入算法的先驱，但是并不被认为是深度学习算法。word2vec是浅层神经网路，GloVe是基于统计的方法。实践证明使用词嵌入在实践中很有效。
 最开始的时候，解决NLP问题需要使用词嵌入的时候倾向与自己训练一个领域相关模型。渐渐的，一些基于Wikipedia, Twitter, Google News, web crawls预训练的模型开始得到广泛应用。使用预训练的词嵌入模型可以很方便的集成到自己的深度学习算法中。
@@ -115,7 +115,7 @@ NLP中这一类问题通常叫做交叉领域或者领域适应技术，跟迁�
 随着词嵌入取得很大的成功，交叉语料的词嵌入出现了，不同于词汇，对齐的是词嵌入空间。[Conneau et al. (2018)](https://arxiv.org/abs/1710.04087)的方法不依赖具体的资源，但能取得比有监督的方法更好的效果。
 作者的方法是使用单语语料库进行训练各自的词嵌入模型，然后学习两种向量空间之间的映射，就像这种转换使得它们在公共空间内相互靠近。他们使用fastText基于Wikipedia训练非监督的词向量。下面的图片说明了训练的过程：
 
-<img src="https://tryolabs.com/images/blog/post-images/2017-12-12-deep-learning-for-nlp-advancements-2017/word-embedding-mappings.png" alt="Smiley face" height="250">
+<img src="https://tryolabs.com/images/blog/post-images/2017-12-12-deep-learning-for-nlp-advancements-2017/word-embedding-mappings.png" alt="Smiley face" height="150">
 
 X代表的是英语，Y代表的是意大利语。
 首先他们使用对抗学习的方法学习到转换矩阵W用来执行第一次语料对齐。他们训练了一个生成式对抗网络（GAN），[Goodfellow et al. (2014)](https://arxiv.org/abs/1406.2661),如果不熟悉GAN，可以参考[这篇博文](https://tryolabs.com/blog/2016/12/06/major-advancements-deep-learning-2016/)。
