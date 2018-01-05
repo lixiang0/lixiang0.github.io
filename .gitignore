@@ -3,4 +3,5 @@ build/
 *.lock
 .sass-cache
 _site/
+_posts/2010-01-01-which-more-important.markdown
 
