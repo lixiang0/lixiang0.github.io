@@ -1,4 +1,4 @@
 ---
 layout: category
-category: Gensim
+category: kg
 ---

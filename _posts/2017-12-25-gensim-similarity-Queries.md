@@ -1,8 +1,8 @@
 ---
 title: "4.Similarity and Queries"
-category: Gensim
+category: nlp
 layout: post
-tags: [Gensim]
+tags: [nlp]
 date: '2017-12-25 21:27:24'
 ---
 

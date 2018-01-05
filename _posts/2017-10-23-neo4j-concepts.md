@@ -1,8 +1,8 @@
 ---
 title: "2.Neo4j相关概念"
-category: neo4j
+category: kg
 layout: post
-tags: [neo4j]
+tags: [neo4j,kg]
 date: '2017-10-17 21:30:24'
 ---
 

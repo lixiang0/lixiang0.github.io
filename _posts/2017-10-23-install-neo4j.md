@@ -1,8 +1,8 @@
 ---
 title: "1.Install Neo4j"
-category: neo4j
+category: kg
 layout: post
-tags: [neo4j]
+tags: [neo4j,kg]
 date: '2017-10-17 21:00:24'
 ---
 

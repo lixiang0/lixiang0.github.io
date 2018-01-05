@@ -1,8 +1,8 @@
 ---
 title: "1.Training on GPU"
-category: Pytorch
+category: dl
 layout: post
-tags: [Pytorch]
+tags: [Pytorch,dl]
 date: '2017-12-29 18:00:24'
 ---
 

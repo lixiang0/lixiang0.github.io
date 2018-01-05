@@ -1,8 +1,8 @@
 ---
 title: "1.Introduction"
-category: Gensim
+category: nlp
 layout: post
-tags: [Gensim]
+tags: [nlp]
 date: '2017-12-24 18:16:24'
 ---
 Gensim提供对计算机和调用者友好，自动从文档中抽取语义主题的免费Python库。

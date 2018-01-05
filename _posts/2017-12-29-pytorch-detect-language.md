@@ -1,8 +1,8 @@
 ---
 title: "2.Detect Language"
-category: Pytorch
+category: dl
 layout: post
-tags: [Pytorch]
+tags: [Pytorch,dl]
 date: '2017-12-29 18:10:24'
 ---
 

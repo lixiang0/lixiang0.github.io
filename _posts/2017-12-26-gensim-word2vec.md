@@ -1,8 +1,8 @@
 ---
 title: "5.Word2Vec"
-category: Gensim
+category: nlp
 layout: post
-tags: [gensim]
+tags: [nlp]
 date: '2017-12-26 20:56:24'
 ---
 ```

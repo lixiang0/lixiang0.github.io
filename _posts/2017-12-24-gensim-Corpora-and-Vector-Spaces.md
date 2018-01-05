@@ -1,8 +1,8 @@
 ---
 title: "2.Corpora and Vector Spaces"
-category: Gensim
+category: nlp
 layout: post
-tags: [Gensim]
+tags: [Gensim,nlp]
 date: '2017-12-24 19:16:24'
 ---
 ```

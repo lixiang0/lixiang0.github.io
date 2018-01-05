@@ -2,7 +2,7 @@
 layout: post
 category: nlp
 title:  "意图分类是怎么实现的"
-tags: [NLP]
+tags: [nlp]
 
 layout: post
 
