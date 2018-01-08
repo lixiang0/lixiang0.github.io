@@ -3,7 +3,7 @@ title: "如何添加新的pub key到远程服务器"
 category: other
 layout: post
 tags: [other,ssh]
-date: '2018-01-06 17:00:24'
+date: '2018-01-08 11:00:24'
 ---
 
 
