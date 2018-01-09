@@ -13,7 +13,7 @@ date: '2018-01-08 17:10:24'
 模型结构用数学公式表示很简单：
 
 $$h_t=\tanh(w_{ih}*x_t+b_{ih}+w_{hh}*h_{(t-1)}+b_hh)$$
-![](./imgs/elman_rnn.png)
+![](/imgs/elman_rnn.png)
 
 $h_{(t-1)}$表示$t-1$时刻隐层的输出，$x_t$表示$t$时刻的输入,i表示第i层。RNN使用tanh或ReLU作为激活函数。
 
