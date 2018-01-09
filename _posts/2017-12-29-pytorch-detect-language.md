@@ -1,5 +1,5 @@
 ---
-title: "2.Detect Language"
+title: "2.Detect Language with MLP"
 category: dl
 layout: post
 tags: [Pytorch,dl]
