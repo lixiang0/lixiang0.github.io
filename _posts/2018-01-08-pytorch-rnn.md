@@ -145,17 +145,20 @@ class RNNModel(torch.nn.Module):
         self.class_nums = class_nums
         print('input_features', input_features, 'hidden_features', hidden_features, 'num_layers', num_layers, bi,
               'class_nums', class_nums)
-        self.rnn = torch.nn.RNN(input_features, hidden_features, num_layers, bidirectional=bi, batch_first=True,dropout=0.2)
+        self.rnn = torch.nn.RNN(input_features, hidden_features, num_layers, bidirectional=bi, batch_first=True,dropout=0.2,nonlinearity='relu')
         self.softmax = torch.nn.Softmax()
 
     def forward(self, input_seq):
+        input_seq=input_seq.view(1,len(input_seq),-1)
         self.h0 = torch.autograd.Variable(
             torch.randn(self.num_layers * (self.bi + 1), len(input_seq), self.hidden_features))
-        self.linear = torch.nn.Linear((self.bi + 1) * self.hidden_features * input_seq.size()[1], self.class_nums)
+        self.h0.cuda()
+        self.linear = torch.nn.Linear(hidden_size, self.class_nums)
         self.linear.cuda()
-        out_rnn, _ = self.rnn(input_seq, self.h0.cuda())
-        out_rnn = out_rnn.view(out_rnn.contiguous().size()[0], -1)
-        out_rnn=out_rnn.view(out_rnn.size()[0], -1).cuda()
+        # print('input_seq', input_seq.size(), 'h0:', h0.size())
+        out_rnn, _ = self.rnn(input_seq, self.h0)
+        # print('out_rnn', out_rnn.size())
+        out_rnn=out_rnn.contiguous().view(input_seq.size()[1], -1)[-1]
         out_linear = self.linear(out_rnn)
         out_softmax = self.softmax(out_linear)
         return out_softmax
@@ -164,39 +167,36 @@ class RNNModel(torch.nn.Module):
 
 ##### 模型训练
 ```python
-model = RNNModel(input_size, hidden_size, num_layers, False, 10)
-model.cuda()
 x = embedding(torch.autograd.Variable(torch.from_numpy(texts_array.astype('int')).view(len(texts_array), max_len)))
 y = torch.autograd.Variable(torch.from_numpy(clss_array.astype('int')).view(len(clss_array)), requires_grad=False)
 print('x', x.size())
 print('y', y.size())
 
-optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
+optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 loss_fun = torch.nn.NLLLoss()
-batch_size=30
-batchs=int(len(x)/batch_size)
 
 try:
     epoch=0
     while(True):
         epoch += 1
         loss_sum=0.0
-
-        for batch in range(batchs):
-            correct = 0
+        correct = 0
+        for i in range(len(x)):
             model.zero_grad()
-            x_train=x[batch*batch_size:(batch+1)*batch_size].cuda()
-            y_train = y[batch*batch_size:(batch+1)*batch_size].cuda()
-            y_pred=model(x_train)
-            loss=loss_fun(y_pred,y_train)
+            x_train=x[i]
+            y_train = y[i]
+            y_pred=model(x_train.cuda())
+            # print(y_pred, y_train)
+            loss=loss_fun(y_pred.view(1,-1),y_train.cuda().view(-1))
             loss.backward(retain_variables=True)
             optimizer.step()
             loss_sum+=loss.data[0]
-            for i in range(batch_size):
-                # print(torch.max(y_pred.data, 1)[1][i][0],y.data[i] )
-                if torch.max(y_pred.data, 1)[1][i]==y.data[i] :
-                    correct += 1
-            print('epoch=',epoch,'loss=',loss.data[0],' accuracy=',correct/batch_size)
+            # print(torch.max(y_pred.data, 0),y.data[i] )
+            if torch.max(y_pred.data, 0)[1][0]==y[i].data[0] :
+                correct += 1
+            # print('epoch=', epoch, 'loss=', loss.data[0])
+            print('epoch=', epoch, 'loss=', loss_sum / len(x))
+        # print('epoch=',epoch,'loss=',loss_sum/len(x),' accuracy=',correct/len(x))
 except KeyboardInterrupt:
     print('key interrupt...')
 finally:
