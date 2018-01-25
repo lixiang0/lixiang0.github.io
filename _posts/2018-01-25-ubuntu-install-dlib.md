@@ -27,7 +27,7 @@ cmake .. -DDLIB_USE_CUDA=0 -DUSE_AVX_INSTRUCTIONS=1
 cmake --build .
 ```
 
-###安装python模块
+### 安装python模块
 
 ```
 cd ..
