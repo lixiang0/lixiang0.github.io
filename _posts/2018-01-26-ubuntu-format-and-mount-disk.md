@@ -15,12 +15,12 @@ date: '2018-01-26 20:20:24'
 
 硬盘在系统中显示为```/dev/sda0```或```/dev/sdb1```之类。比如上面的就表示```/dev/sda0```作为```/```跟目录。
 
-然后执行```mkfs -t ext4 /dev/sdb````命令格式化硬盘。
+然后执行```sudo mkfs -t ext4 /dev/sdb````命令格式化硬盘。
 
 最后挂载：
 ```
 mkdir ~/data
-mount /dev/sdb` ~/data
+sudo mount /dev/sdb` ~/data
 ```
 上述操作将```/dev/sdb1```映射到```~/data```目录。
 
