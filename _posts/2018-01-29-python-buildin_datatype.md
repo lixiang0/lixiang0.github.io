@@ -156,7 +156,8 @@ namedict = {'name': 'ruben', 'code': 1, 'gender': 'man'}
 ### 数据类型之间的转换
 
 Python提供了基本数据类型之间转换的内置方法：
-|函|描述|
+
+|函数|描述|
 |-|-|
 |int(x [,base])|将x转换为一个整数|
 |long(x [,base] )|将x转换为一个长整数|
