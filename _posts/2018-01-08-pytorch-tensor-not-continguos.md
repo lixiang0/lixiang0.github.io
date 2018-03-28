@@ -15,5 +15,5 @@ date: '2018-01-09 14:10:24'
 用法:
 
 ```
-tensor_variable.contiguous()
+torch.randn(3,3).contiguous()
 ```
