@@ -7,7 +7,9 @@ date: '2018-6-24 18:00:24'
 ---
 
 
-今天遇到一个问题，需要将多张图片放到一张中，并且还需要添加padding。
+今天遇到一个问题，需要将多张图片放到一张中，并且还需要添加padding。如下图所示：
+<img src="/imgs/opencv-merge.jpg" alt="opencv merge" height="250">
+
 首先介绍思路：
 
 - 将待合成的图片尺寸resize到一致
