@@ -1,5 +1,5 @@
 ---
-title: "Microsoft COCO-Common Objects in Context"
+title: "Microsoft COCO-Common Objects in Context（中文版）"
 category: dl
 layout: post
 tags: [paper,cv]
