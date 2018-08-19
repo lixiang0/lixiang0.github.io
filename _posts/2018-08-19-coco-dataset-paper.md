@@ -8,4 +8,4 @@ date: '2018-08-19 17:26:24'
 
 
 
-<center><embed src="/imgs/coco-dataset-paper.pdf" width="850" height="600"></center>
+<center><embed src="/imgs/coco-dataset-paper.pdf" width="600" height="1600"></center>
