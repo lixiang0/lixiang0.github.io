@@ -1,5 +1,5 @@
 ---
-title: "Microsoft COCO-Common Objects in Context"
+title: "Microsoft COCO-Common Objects in Context（中文版）"
 category: dl
 layout: post
 tags: [paper,cv]
@@ -8,4 +8,4 @@ date: '2018-08-19 17:26:24'
 
 
 
-<center><embed src="/imgs/coco-dataset-paper.pdf" width="600" height="1600"></center>
+<center><embed src="/imgs/coco-dataset-paper.pdf" width="750" height="1000"></center>
