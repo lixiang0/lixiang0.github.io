@@ -1,8 +1,8 @@
 ---
 title: "Microsoft COCO-Common Objects in Context（中文版）"
-category: dl
+category: translation
 layout: post
-tags: [paper,cv]
+tags: [翻译,paper,cv]
 date: '2018-08-19 17:26:24'
 ---
 
