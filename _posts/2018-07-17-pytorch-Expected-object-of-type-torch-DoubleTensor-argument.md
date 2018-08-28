@@ -1,6 +1,6 @@
 ---
 title: "RuntimeError: Expected object of type torch.DoubleTensor but found type torch.FloatTensor for argument #2 'weight'解决办法"
-category: dl
+category: other
 layout: post
 tags: [Pytorch,dl]
 date: '2018-07-17 17:42:24'
