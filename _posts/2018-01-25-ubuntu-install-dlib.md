@@ -1,8 +1,8 @@
 ---
 title: "Ubuntu下安装dlib"
-category: other
+category: dl
 layout: post
-tags: [other,ubuntu]
+tags: [dl,ubuntu]
 date: '2018-01-25 14:20:24'
 ---
 
