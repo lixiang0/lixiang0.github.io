@@ -1,6 +1,6 @@
 ---
 title: "python中UnicodeDecodeError：'gb2312'codec can't decode bytes：illegal multibyte sequence解决办法"
-category: other
+category: python
 layout: post
 tags: [python]
 date: '2018-06-07 00:00:25'

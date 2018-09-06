@@ -1,6 +1,6 @@
 ﻿---
 title: "python教程之1环境配置和IDE"
-category: other
+category: python
 layout: post
 tags: [other,python]
 date: '2018-01-26 00:00:24'

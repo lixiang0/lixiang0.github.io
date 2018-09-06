@@ -1,6 +1,6 @@
 ---
 title: "python中string转换为datetime"
-category: other
+category: python
 layout: post
 tags: [python]
 date: '2018-06-07 00:00:24'

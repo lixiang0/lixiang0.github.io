@@ -1,6 +1,6 @@
 ---
 title: "python中str和repr"
-category: other
+category: python
 layout: post
 tags: [python]
 date: '2018-09-04 00:00:24'

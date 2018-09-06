@@ -1,6 +1,6 @@
 ---
 title: "python中module和package"
-category: other
+category: python
 layout: post
 tags: [python]
 date: '2018-09-05 00:00:24'

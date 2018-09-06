@@ -1,6 +1,6 @@
 ﻿---
 title: "python教程之2基本语法"
-category: other
+category: python
 layout: post
 tags: [python]
 date: '2018-01-26 23:00:24'

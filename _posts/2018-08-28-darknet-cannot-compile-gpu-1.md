@@ -1,6 +1,6 @@
 ---
 title: "darknet:cannot compile with gpu=1"
-category: other
+category: dl
 layout: post
 tags: [Pytorch,dl]
 date: '2018-08-28 17:26:24'

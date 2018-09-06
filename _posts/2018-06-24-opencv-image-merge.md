@@ -1,6 +1,6 @@
 ---
 title: "opencv中如何合并多张图片到一张图片中"
-category: other
+category: python
 layout: post
 tags: opencv
 date: '2018-6-24 18:00:24'

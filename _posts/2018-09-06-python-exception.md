@@ -1,6 +1,6 @@
 ---
 title: "python中的exception"
-category: other
+category: python
 layout: post
 tags: [python]
 date: '2018-09-06 00:00:24'

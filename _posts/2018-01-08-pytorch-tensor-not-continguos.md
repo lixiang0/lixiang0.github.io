@@ -1,6 +1,6 @@
 ---
 title: "解决RuntimeError: input is not contiguous问题"
-category: other
+category: dl
 layout: post
 tags: [Pytorch,dl]
 date: '2018-01-09 14:10:24'

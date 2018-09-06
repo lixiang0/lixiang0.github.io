@@ -1,6 +1,6 @@
 ---
 title: "python教程之3基本数据类型"
-category: other
+category: python
 layout: post
 tags: [python]
 date: '2018-01-29 23:00:24'
