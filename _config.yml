@@ -14,6 +14,8 @@ all_categories: [
 ["Machine Learning", "机器学习","/posts/ml.html"], 
 ["nlp", "自然语言处理","/posts/nlp.html"],
 ["kg", "知识图谱","/posts/kg.html"],
+["cpp", "C++","/posts/cpp.html"],
+["python", "Python","/posts/python.html"],
 ["other", "杂记","/posts/other.html"],
 ["translation", "翻译","/posts/translation.html"],
 ["about", "关于","/about.html"]
