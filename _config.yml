@@ -3,7 +3,7 @@ highlighter: rouge
 permalink: /posts/:title.html
 excerpt_separator: "<!-- more -->"
 
-github: panxw
+github: lixiang0
 author: "Ruben"
 email: lingyunzi09#gmail.com
 name: "My Blog"
@@ -18,6 +18,7 @@ all_categories: [
 ["python", "Python","/posts/python.html"],
 ["other", "杂记","/posts/other.html"],
 ["translation", "翻译","/posts/translation.html"],
+["finance", "翻译","/posts/finance.html"],
 ["about", "关于","/about.html"]
 ]
 
