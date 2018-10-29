@@ -18,7 +18,7 @@ all_categories: [
 ["python", "Python","/posts/python.html"],
 ["other", "杂记","/posts/other.html"],
 ["translation", "翻译","/posts/translation.html"],
-["finance", "翻译","/posts/finance.html"],
+["finance", "经济","/posts/finance.html"],
 ["about", "关于","/about.html"]
 ]
 
