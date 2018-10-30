@@ -17,15 +17,15 @@ date: '2018-09-06 18:00:24'
 ```
 tar -xvf cmake-3.12.1.tar.gz
 cd cmake-3.12.1
-cmake ..
+cmake .
 make -j8
 sudo make install
 ```
-### 3.重启
+### 3.更新
 
-上一步完成之后需要重启电脑，之后使用：
+使用：
 ```
-cmake --version
+sudo update-alternatives --install /usr/bin/cmake cmake /usr/local/bin/cmake 1 --force
 ```
 
 可以看到输出的是：
