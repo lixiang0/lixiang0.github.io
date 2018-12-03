@@ -51,6 +51,9 @@ https://developer.nvidia.com/cudnn
 安装的方式比较简单，下载了安装包之后直接安装即可：
 ```
 sudo dpkg -i cuda-repo-ubuntu1604-9-1-local_9.1.85-1_amd64
+sudo apt-key add /var/cuda-repo-9-1-local/7fa2af80.pub
+sudo apt-get update
+sudo apt-get install cuda
 sudo dpkg -i libcudnn7_7.1.1.5-1+cuda9.1_amd64.deb
 ```
 最后，别忘了设置一下环境变量：
