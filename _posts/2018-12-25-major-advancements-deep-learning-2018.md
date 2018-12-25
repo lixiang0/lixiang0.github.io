@@ -21,7 +21,7 @@ date: '2018-12-20 21:00:24'
 历史上最著名的语言模型是基于马尔可夫模型和n-gram语言模型。随着深度学习的发展，LSTM网络为语言模型带来了极大的提升。尽管效果已经不错，但是现有的模型是非双向的，这就意味着只考虑到了单词的左（或者右）方向上的上下文。
 过去的十月份，Google AI语言组发布的一篇[论文](https://arxiv.org/abs/1810.04805)在NLP社区引起了轰动。他们提出的BERT模型是一种新的双向语言模型哦那个，在多个NLP任务中取得了最好的结果，包括情感分析、QA、语义检测。
 
-<img src="https://tryolabs.com/images/blog/post-images/2018-12-19-major-advancements-deep-learning-2018/glue-test-results.42b7601b.png" width=400>
+<img src="https://tryolabs.com/images/blog/post-images/2018-12-19-major-advancements-deep-learning-2018/glue-test-results.42b7601b.png" width="480" height="320">
 
 <center>GLUE测试集上的结果.</center>
 
@@ -44,7 +44,7 @@ BERT对于商业应用提供了极大的提升，不管是机器翻译，还是c
 
 生成的结果特别的令人惊喜，如下图所示：
 
-<img src="https://tcwang0509.github.io/vid2vid/paper_gifs/cityscapes_comparison.gif" width=400>
+<img src="https://tcwang0509.github.io/vid2vid/paper_gifs/cityscapes_comparison.gif" width="480" height="320">
 
 <center>Video-to-video synthesis.</center>
 
@@ -68,7 +68,8 @@ BERT对于商业应用提供了极大的提升，不管是机器翻译，还是c
 
 核心的思路从语言模型中获取词嵌入，即Embeddings from Language Models (ELMo)，就是指用整句或者整个上下文对词进行向量化。为了实现这个目标，作者首先使用大量的语料训练了一个双向语言模型。此外，因为这个语言模型是基于字母的，因而单词之间的形态学关系也能得到。所以，这个模型能够很好的处理从未出现过的情形，比如字典外的词。
 
-<img src="https://tryolabs.com/images/blog/post-images/2018-12-19-major-advancements-deep-learning-2018/word-embeddings-results-nlp-task.b1783137.png" width=400>
+<img src="https://tryolabs.com/images/blog/post-images/2018-12-19-major-advancements-deep-learning-2018/word-embeddings-results-nlp-task.b1783137.png" width="480" height="320">
+
 <center>6个测试集上的结果对比.</center>
 
 作者通过简单的添加ELMo到当前的一些先进的方法中就能在很多NLP任务重获得更好的结果，比如文本蕴含，指代消解，QA。ELMo对Google的BERT有很大的贡献，相信能对一些商业应用能有更好的促进。
@@ -80,7 +81,9 @@ BERT对于商业应用提供了极大的提升，不管是机器翻译，还是c
 毫无疑问，很多视觉任务之间存在关联。比如说知道物体的表面特征能够帮助对图片进行深度估计。在这种场景下，迁移技术或者使用监督学习的结果是很有用的。
 
 作者提出了一种计算方法建立26种常见视觉任务之间通过迁移学习建立依赖结构，包括物体识别、边缘检测、深度估计。
+
 ![](https://tryolabs.com/images/blog/post-images/2018-12-19-major-advancements-deep-learning-2018/visual-task-sample-task-structure.9b8b571a.png)
+
 <center>A sample task structure discovered by the computational task taxonomy.</center>
 
 正如上图展示的一样，如果联合表面检测和边缘检测，则阴影和点的匹配模型只需要少量的标注数据就能得到。
@@ -94,6 +97,7 @@ BERT对于商业应用提供了极大的提升，不管是机器翻译，还是c
 深度学习模型对于NLP领域的促进非常巨大，很多NLP任务的先进结果都是利用的深度学习模型。然而，这些模型都需要构建大量的数据并耗费大量的时间进行训练。
 
 [Howard and Ruder](https://arxiv.org/abs/1801.06146)的工作提供了一种利用Universal Language Model Fine-tuning (ULMFiT)的迁移学习的方法。主要的思路就是微调已经训练好的语言模型。这种巧妙的方法能够使得我们可以使用少量的标注数据就可以对其他任务进行探索。
+
 ![](https://tryolabs.com/images/blog/post-images/2018-12-19-major-advancements-deep-learning-2018/ulmfit-test-error-rates.447ebaf9.png)
 <center>模型的错误率.</center>
 
