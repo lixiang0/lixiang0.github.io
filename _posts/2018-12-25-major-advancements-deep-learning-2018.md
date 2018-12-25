@@ -21,7 +21,8 @@ date: '2018-12-20 21:00:24'
 历史上最著名的语言模型是基于马尔可夫模型和n-gram语言模型。随着深度学习的发展，LSTM网络为语言模型带来了极大的提升。尽管效果已经不错，但是现有的模型是非双向的，这就意味着只考虑到了单词的左（或者右）方向上的上下文。
 过去的十月份，Google AI语言组发布的一篇[论文](https://arxiv.org/abs/1810.04805)在NLP社区引起了轰动。他们提出的BERT模型是一种新的双向语言模型哦那个，在多个NLP任务中取得了最好的结果，包括情感分析、QA、语义检测。
 
-![](https://tryolabs.com/images/blog/post-images/2018-12-19-major-advancements-deep-learning-2018/glue-test-results.42b7601b.png)
+<img src="https://tryolabs.com/images/blog/post-images/2018-12-19-major-advancements-deep-learning-2018/glue-test-results.42b7601b.png" width=400>
+
 <center>GLUE测试集上的结果.</center>
 
 与传统的从左到右或者从右到左的语言模型策略不同，BERT的预训练策略如下：
@@ -42,12 +43,15 @@ BERT对于商业应用提供了极大的提升，不管是机器翻译，还是c
 在论文[video-to-video synthesis](https://arxiv.org/abs/1808.06601)中，英伟达的研究人员尝试解决这个问题。简单的说他们的目标就是构建将输入视频映射到真实的准确描述输入内容的输出视频的函数。作者将这个问题建模为自动创建的视频的条件分布与最终的视频的条件分布的分布匹配问题。为了达到这个目标，他们使用GAN创建该模型。这个方法的关键是，生成的合成数据不能被判别器分辨出为假的。他们定义了一个时空学习目标方程，旨在生成时空一致性的视频
 
 生成的结果特别的令人惊喜，如下图所示：
-<img src="https://tcwang0509.github.io/vid2vid/paper_gifs/cityscapes_comparison.gif"></img>
+
+<img src="https://tcwang0509.github.io/vid2vid/paper_gifs/cityscapes_comparison.gif" width=400>
+
 <center>Video-to-video synthesis.</center>
 
 左上是[Cityscapes](https://www.cityscapes-dataset.com/)数据集中的街景语义分割视频。作者还与两个baseline进行了对比: pix2pixHD (右上) 和COVST (左下).
 
 该方法可以应用到多个任务重，比如用于视频人脸交换的草图到视频生成。下面的视频，从左到右，先是由原视视频生成草图，然后由草图生成合成视频。
+
 <video width="480" height="320" controls="controls">
 <source src="https://tcwang0509.github.io/vid2vid/paper_gifs/face.mp4" type="video/mp4">
 </video>
@@ -63,7 +67,8 @@ BERT对于商业应用提供了极大的提升，不管是机器翻译，还是c
 正如标题显示的一样, [Deep contextualized word representations](https://arxiv.org/abs/1802.05365) (NAACL 2018的优秀论文), Allen Institute for Artificial Intelligence以及 the Paul G. Allen School of Computer Science & Engineering提出了一种新的深度上下文词表征方式，模拟了词使用的复杂特征（比如语法和语义），以及在语言间的上下文的使用变化（比如多义）。
 
 核心的思路从语言模型中获取词嵌入，即Embeddings from Language Models (ELMo)，就是指用整句或者整个上下文对词进行向量化。为了实现这个目标，作者首先使用大量的语料训练了一个双向语言模型。此外，因为这个语言模型是基于字母的，因而单词之间的形态学关系也能得到。所以，这个模型能够很好的处理从未出现过的情形，比如字典外的词。
-![](https://tryolabs.com/images/blog/post-images/2018-12-19-major-advancements-deep-learning-2018/word-embeddings-results-nlp-task.b1783137.png)
+
+<img src="https://tryolabs.com/images/blog/post-images/2018-12-19-major-advancements-deep-learning-2018/word-embeddings-results-nlp-task.b1783137.png" width=400>
 <center>6个测试集上的结果对比.</center>
 
 作者通过简单的添加ELMo到当前的一些先进的方法中就能在很多NLP任务重获得更好的结果，比如文本蕴含，指代消解，QA。ELMo对Google的BERT有很大的贡献，相信能对一些商业应用能有更好的促进。
