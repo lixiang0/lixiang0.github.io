@@ -1,8 +1,8 @@
 ---
 title: "[翻译]2018年深度学习主要进展"
-category: dl
+category: translation
 layout: post
-tags: [dl]
+tags: [翻译,dl]
 date: '2018-12-20 21:00:24'
 ---
 原文：[链接](https://tryolabs.com/blog/2018/12/19/major-advancements-deep-learning-2018/)
