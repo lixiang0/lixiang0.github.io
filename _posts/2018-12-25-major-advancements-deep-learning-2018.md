@@ -21,7 +21,7 @@ date: '2018-12-20 21:00:24'
 历史上最著名的语言模型是基于马尔可夫模型和n-gram语言模型。随着深度学习的发展，LSTM网络为语言模型带来了极大的提升。尽管效果已经不错，但是现有的模型是非双向的，这就意味着只考虑到了单词的左（或者右）方向上的上下文。
 过去的十月份，Google AI语言组发布的一篇[论文](https://arxiv.org/abs/1810.04805)在NLP社区引起了轰动。他们提出的BERT模型是一种新的双向语言模型哦那个，在多个NLP任务中取得了最好的结果，包括情感分析、QA、语义检测。
 
-<img src="https://tryolabs.com/images/blog/post-images/2018-12-19-major-advancements-deep-learning-2018/glue-test-results.42b7601b.png" width="480" height="320">
+<img src="https://tryolabs.com/images/blog/post-images/2018-12-19-major-advancements-deep-learning-2018/glue-test-results.42b7601b.png" height="320">
 
 <center>GLUE测试集上的结果.</center>
 
@@ -44,7 +44,7 @@ BERT对于商业应用提供了极大的提升，不管是机器翻译，还是c
 
 生成的结果特别的令人惊喜，如下图所示：
 
-<img src="https://tcwang0509.github.io/vid2vid/paper_gifs/cityscapes_comparison.gif" width="480" height="320">
+<img src="https://tcwang0509.github.io/vid2vid/paper_gifs/cityscapes_comparison.gif" height="320">
 
 <center>Video-to-video synthesis.</center>
 
@@ -68,7 +68,7 @@ BERT对于商业应用提供了极大的提升，不管是机器翻译，还是c
 
 核心的思路从语言模型中获取词嵌入，即Embeddings from Language Models (ELMo)，就是指用整句或者整个上下文对词进行向量化。为了实现这个目标，作者首先使用大量的语料训练了一个双向语言模型。此外，因为这个语言模型是基于字母的，因而单词之间的形态学关系也能得到。所以，这个模型能够很好的处理从未出现过的情形，比如字典外的词。
 
-<img src="https://tryolabs.com/images/blog/post-images/2018-12-19-major-advancements-deep-learning-2018/word-embeddings-results-nlp-task.b1783137.png" width="480" height="320">
+<img src="https://tryolabs.com/images/blog/post-images/2018-12-19-major-advancements-deep-learning-2018/word-embeddings-results-nlp-task.b1783137.png" height="320">
 
 <center>6个测试集上的结果对比.</center>
 
