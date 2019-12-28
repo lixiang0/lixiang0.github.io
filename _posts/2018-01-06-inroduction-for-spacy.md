@@ -6,7 +6,7 @@ tags: [spacy,nlp]
 date: '2018-01-06 14:30:24'
 ---
 
-spaCy是一个NLP工具包用于完成NLP领域的很多任务比如词性标注，命名实体识别等，支持Unix/Linux,macOS/os X和Windows操作系统，可以通过pip,conda方式安装。
+spaCy是一个NLP工具包用于完成NLP领域的很多任务比如词性标注，命名实体识别，依存句法分析，归一化，停用词，判断是否词语等，支持Unix/Linux,macOS/os X和Windows操作系统，可以通过pip,conda方式安装。
 
 pip:
 
@@ -42,7 +42,7 @@ conda install -c conda-forge spacy
 [语言模型](https://github.com/explosion/spacy-models)的安装：
 ```
 #命令行
-python -m spacy download xx
+python -m spacy download xx #xx表示上面表格中的的NAME
 #pip
 pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_md-1.2.0/en_core_web_md-1.2.0.tar.gz
 #本地文件
