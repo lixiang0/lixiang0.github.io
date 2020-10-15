@@ -7,8 +7,8 @@ github: lixiang0
 author: "Ruben"
 email: lingyunzi09#gmail.com
 name: "My Blog"
-url: http://blog.rubenxiao.com
-domain: blog.rubenxiao.com
+url: http://blog.youran.ai
+domain: blog.youran.ai
 all_categories: [
 ["Deep Learning", "深度学习","/posts/dl.html"],
 ["Machine Learning", "机器学习","/posts/ml.html"], 
