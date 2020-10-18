@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://blog.rubenxiao.com/atom.xml
+Sitemap: http://blog.youran.ai/atom.xml
