@@ -1,6 +1,6 @@
 ---
-title: ""
-category: 如何创建自己的私有conda镜像
+title: "如何创建自己的私有conda镜像"
+category: other
 layout: post
 tags: [conda,python]
 date: '2020-10-18 16:00:24'
