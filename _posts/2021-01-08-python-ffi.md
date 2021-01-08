@@ -3,7 +3,7 @@ title: "fatal error: ffi.h: No such file or directory问题的解决"
 category: python
 layout: post
 tags: [other,python]
-date: '2018-01-26 00:00:24'
+date: '2021-01-08 00:00:24'
 ---
 
 For Debian and Ubuntu:
