@@ -39,6 +39,7 @@ I/O size (minimum/optimal): 4096 bytes / 4096 bytes
 接着是为新盘创建新分区。
 
 假设```/dev/sdd/```为新的硬盘，那么执行```sudo fdisk /dev/sdd/```，可以看到输出：
+
 ```
 Command (m for help):
 ```
@@ -52,6 +53,7 @@ Command (m for help):
 - 输入w是保存之前的修改。
 
 所以完成的操作就是(省去了d操作)：
+
 ```
 $ sudo fdisk /dev/sdd
 
@@ -78,6 +80,7 @@ Syncing disks.
 ```
 
 接着安装LVM2和加载LVM2模块：
+
 ```
 $ sudo apt-get install lvm2
 Reading package lists... Done
@@ -90,6 +93,7 @@ $ modprobe dm-mod
 ```
 
 再执行```sudo fdisk -l ```，可以看到:
+
 ```
 Disk /dev/sdd: 223.6 GiB, 240057409536 bytes, 468862128 sectors
 Units: sectors of 1 * 512 = 512 bytes
@@ -109,6 +113,7 @@ Device     Start       End   Sectors   Size Type
 
 - 创建物理盘：
 
+
 ```
 $ sudo pvcreate /dev/sdd1
 WARNING: vfat signature detected on /dev/sdd1 at offset 82. Wipe it? [y/n]: y
@@ -119,6 +124,8 @@ WARNING: vfat signature detected on /dev/sdd1 at offset 510. Wipe it? [y/n]: y
 ```
 
 - 创建分组和逻辑盘
+
+
 ```
 $ sudo vgcreate media /dev/sdd1
   Volume group "media" successfully created
@@ -128,6 +135,8 @@ $ sudo lvcreate -l100%FREE -ndisks media
 ```
 
 - 改变逻辑盘格式
+
+
 ```
 $ sudo mke2fs -t ext4 /dev/media/disks
 mke2fs 1.42.13 (17-May-2015)
@@ -146,6 +155,7 @@ Writing superblocks and filesystem accounting information: done
 
 - 挂载
 
+
 ```
 $ mkdir ~/disks
 
@@ -161,26 +171,32 @@ $ sudo vim /etc/fstab
 
 ## 三、其他
 
+
 ```
 sudo vgextend media /dev/sdb1
 ```
+
 将/dev/sdb1分配给media组。
 
 ```
 sudo lvextend -L+150G /dev/media/disks
 sudo resize2fs /dev/media/disks
 ```
+
 额外分配150G给/dev/media/disks，并更新
 
 
 ```
 sudo vgdisplay
 ```
+
 显示当前的分区情况。比较重要的是：
+
 ```
   Alloc PE / Size       431253 / 1.65 TiB
   Free  PE / Size       478 / 1.87 GiB
 ```
+
 这里可以关注的是还有多少空余空间。
 
 
