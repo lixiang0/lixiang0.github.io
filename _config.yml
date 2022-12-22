@@ -3,12 +3,15 @@ highlighter: rouge
 permalink: /posts/:title.html
 excerpt_separator: "<!-- more -->"
 
+theme: jekyll-theme-minimal
+title: lixiang0's homepage
+description: my blog
 github: lixiang0
 author: "Ruben"
 email: lingyunzi09#gmail.com
 name: "My Blog"
-url: http://blog.youran.ai
-domain: blog.youran.ai
+url: http://youran.tech
+domain: youran.tech
 all_categories: [
 ["Deep Learning", "深度学习","/posts/dl.html"],
 ["Machine Learning", "机器学习","/posts/ml.html"], 
@@ -32,3 +35,4 @@ collections:
 
 gems:
  - jekyll-paginate
+ 
